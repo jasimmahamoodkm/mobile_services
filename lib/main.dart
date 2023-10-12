@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:beamer/beamer.dart';
+import 'package:mobile_services/pages/Dashboard.dart';
 
 import 'Locations/locations.dart';
 
@@ -14,7 +15,10 @@ class MyApp extends StatelessWidget {
   final routerDelegate = BeamerDelegate(
     transitionDelegate: const NoAnimationTransitionDelegate(),
     locationBuilder: (routeInformation, _) {
-      return DashboardLocation(routeInformation);
+      if (routeInformation.location!.contains('sales')) {
+        return SalesLocation(routeInformation);
+      }
+      return DefaultLocation(routeInformation);
     },
   );
 

@@ -1,7 +1,6 @@
 import 'dart:html';
 
 import 'package:beamer/beamer.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_services/Locations/locations.dart';
 
@@ -32,8 +31,23 @@ class _LandingScreenState extends State<LandingScreen> {
           child: Beamer(
             key: _beamerKey,
             routerDelegate: BeamerDelegate(locationBuilder: (routeInfo, data) {
+              if (routeInfo.location!.contains('sales')) {
+                return SalesLocation(routeInfo);
+              }
+              if (routeInfo.location!.contains('stocks')) {
+                return StockLocation(routeInfo);
+              }
+              if (routeInfo.location!.contains('products')) {
+                return ProductsLocation(routeInfo);
+              }
               if (routeInfo.location!.contains('dashboard')) {
                 return DashboardLocation(routeInfo);
+              }
+              if (routeInfo.location!.contains('settings')) {
+                return SettingsLocation(routeInfo);
+              }
+              if (routeInfo.location!.contains('customers')) {
+                return CustomerLocation(routeInfo);
               }
               return NotFound(path: routeInfo.location!.toString());
             }),
