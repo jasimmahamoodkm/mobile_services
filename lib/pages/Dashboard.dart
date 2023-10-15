@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../views/products_view.dart';
+import '../widgets/products_widget.dart';
+
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
 
@@ -48,9 +51,9 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      // backgroundColor: Colors.deepPurple,
       body: Center(
-        child: Text('Products'),
+        child: ProductsWidget(),
       ),
     );
   }

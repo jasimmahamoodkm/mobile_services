@@ -76,7 +76,7 @@ class _SideNavState extends State<SideNav> {
   List<String> navItems = [
     'Dashboard',
     'Sales',
-    'Stock',
+    'stocks',
     'Products',
     'Customers',
     'Settings'
@@ -85,7 +85,7 @@ class _SideNavState extends State<SideNav> {
   List<String> navs = [
     '/dashboard',
     '/sales',
-    '/stock',
+    '/stocks',
     '/products',
     '/customers',
     '/settings'

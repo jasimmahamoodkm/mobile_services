@@ -14,8 +14,8 @@ class DefaultLocation extends BeamLocation<BeamState> {
   List<BeamPage> buildPages(BuildContext context, BeamState state) {
     final pages = [
       const BeamPage(
-          key: ValueKey('home'),
-          title: 'Home',
+          key: ValueKey('dashboard'),
+          title: 'Dashboard',
           child: LandingScreen(),
           type: BeamPageType.fadeTransition),
     ];
